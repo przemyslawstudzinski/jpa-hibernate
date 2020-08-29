@@ -32,7 +32,7 @@ public class Example2SecondaryTableAndEmbedded {
                 "Jan",
                 "Kowalski",
                 88332300221L,
-                LocalDate.now().minusYears(22),
+                LocalDate.now().minusYears(32),
                 Gender.MALE,
                 BigDecimal.valueOf(2000.00),
                 address

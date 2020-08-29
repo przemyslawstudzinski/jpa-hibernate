@@ -84,9 +84,9 @@ public class Example1BasicOperations {
         entityManager.persist(employee);
         System.out.println(employee);
         employee.setFirstName("Aleksandra"); // ta zmiana zostanie uwzględniona - dirty checking
-        entityManager.flush(); // bezpośrednie wypchnięcie zmian do bazy - na potrzeby przykładu (mimo wszystko trzeba pamiętać, że zmiany nie są widoczne w innej transakcji przed commit)
-        entityManager.detach(employee); // odłączenie od kontekstu persystencji
-        employee.setLastName("Nowak"); // ta zmiana zostanie pominięta
+        entityManager.flush();               // bezpośrednie wypchnięcie zmian do bazy - na potrzeby przykładu
+        entityManager.detach(employee);      // odłączenie od kontekstu persystencji
+        employee.setLastName("Nowak");       // ta zmiana zostanie pominięta
         entityManager.getTransaction().commit();
 
         entityManager.getTransaction().begin();
@@ -95,7 +95,7 @@ public class Example1BasicOperations {
         entityManager.getTransaction().commit();
 
         entityManager.getTransaction().begin();
-        entityManager.merge(employee); // ponowne dołączenie od kontekstu persystencji
+        entityManager.merge(employee); // ponowne dołączenie od kontekstu persystencji – uwzględnienie ostatniej zmiany
         entityManager.getTransaction().commit();
 
         entityManager.getTransaction().begin();

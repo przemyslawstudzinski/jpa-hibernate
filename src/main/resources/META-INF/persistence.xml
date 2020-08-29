@@ -5,13 +5,13 @@
     <persistence-unit name="jpa.hibernate">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <properties>
-            <!-- <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" /> -->
+            <!-- <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" /> --> <!-- Obecnie JDBC automatycznie wykrywa -->
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jpa_sda?serverTimezone=Europe/Warsaw" />
             <property name="javax.persistence.jdbc.user" value="root" />
             <property name="javax.persistence.jdbc.password" value="password" />
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" />
-            <property name="hibernate.hbm2ddl.auto" value="create" /> <!--Generowanie schematu DDL-->
-            <property name="hibernate.show_sql" value = "true" /> <!--Logowanie zapytań SQL-->
+            <property name="hibernate.hbm2ddl.auto" value="create" /> <!-- Sposób generowania schematu DDL -->
+            <property name="hibernate.show_sql" value = "true" /> <!-- Logowanie zapytań SQL -->
         </properties>
     </persistence-unit>
 </persistence>

@@ -57,6 +57,7 @@ public class Example3Relationships {
         Phone phone1 = new Phone("private", "676989776");
         Phone phone2 = new Phone("business", "576989776");
         // Przypisanie telefonów do pracowników dokonujemy po stronie właściciela relacji
+        //employee.setPhones(List.of(phone1, phone2)); // Tak nie działa!
         phone1.setOwner(employee);
         phone2.setOwner(employee);
         // Zapis do bazy danych
