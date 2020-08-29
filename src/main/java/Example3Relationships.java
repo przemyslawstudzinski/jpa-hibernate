@@ -1,4 +1,3 @@
-import domain.Address;
 import domain.Employee;
 import domain.Locker;
 import domain.Phone;
@@ -34,10 +33,11 @@ public class Example3Relationships {
                 88332350221L,
                 LocalDate.now().minusYears(32),
                 Gender.MALE,
-                BigDecimal.valueOf(2000.00),
-                locker
+                BigDecimal.valueOf(2000.00)
         );
-        locker.setEmployee(employee);
+        // Przypisanie dokonujemy po stronie właściciela relacji
+        //locker.setEmployee(employee); // Tak nie działa!
+        employee.setLocker(locker);
         // Zapis do bazy danych
         entityManager.getTransaction().begin();
         entityManager.persist(locker);

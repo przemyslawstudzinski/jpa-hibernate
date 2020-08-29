@@ -10,5 +10,6 @@ public class BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@GeneratedValue(strategy = GenerationType.TABLE) // Do dziedziczenia TABLE_PER_CLASS
     protected Long id;
 }
